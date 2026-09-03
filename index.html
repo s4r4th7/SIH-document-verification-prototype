@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DSentinel — Document verification</title>
-<link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,440;9..144,560;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     <nav class="nav">
       <a href="#documents">Documents</a>
       <a href="#how">How it works</a>
-      <a href="#verify">Verify</a>
+      <a href="#upload">Verify a document</a>
     </nav>
   </div>
 </header>
@@ -25,134 +25,123 @@
 <main id="top">
 
   <section class="hero">
-    <div class="wrap hero-row">
+    <div class="wrap hero-grid">
       <div class="hero-copy">
-        <h1>Verify identity documents in seconds, not queues.</h1>
-        <p class="hero-sub">Upload an Aadhaar card, PAN, passport, visa or income certificate. DSentinel reads it, checks the fields, and hands you back a structured, verified record.</p>
+        <h1>Verify documents<br>before you trust them.</h1>
+        <p class="lede">DSentinel reads Aadhaar, PAN, passport, visa and income‑certificate uploads, pulls out the fields that matter, and checks them against the document's own format rules.</p>
         <div class="hero-actions">
-          <a href="#verify" class="btn btn-primary">Upload a document</a>
-          <a href="#how" class="btn btn-ghost">See how it works</a>
+          <a href="#upload" class="btn btn-primary">Upload a document</a>
+          <a href="#documents" class="btn btn-ghost">See supported documents</a>
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="doc-mock" id="docMock">
-          <div class="doc-mock-head">
-            <span class="doc-mock-label">AADHAAR</span>
-            <span class="doc-mock-id">•••• •••• 4471</span>
-          </div>
-          <div class="doc-mock-line w-70"></div>
-          <div class="doc-mock-line w-40"></div>
-          <div class="doc-mock-line w-55"></div>
-          <div class="doc-mock-photo"></div>
-          <div class="scan-line"></div>
-          <div class="doc-mock-status" id="mockStatus">Verified</div>
-        </div>
+      <div class="hero-figure" aria-hidden="true">
+        <svg viewBox="0 0 360 460" class="doc-stamp-svg">
+          <rect x="20" y="20" width="280" height="400" fill="var(--paper-raised)" stroke="var(--rule)" stroke-width="1.5"/>
+          <line x1="50" y1="80" x2="250" y2="80" stroke="var(--rule)" stroke-width="2"/>
+          <line x1="50" y1="110" x2="230" y2="110" stroke="var(--rule)" stroke-width="1.5"/>
+          <line x1="50" y1="132" x2="210" y2="132" stroke="var(--rule)" stroke-width="1.5"/>
+          <rect x="50" y="160" width="90" height="110" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+          <line x1="155" y1="170" x2="250" y2="170" stroke="var(--rule)" stroke-width="1.5"/>
+          <line x1="155" y1="192" x2="235" y2="192" stroke="var(--rule)" stroke-width="1.5"/>
+          <line x1="155" y1="214" x2="245" y2="214" stroke="var(--rule)" stroke-width="1.5"/>
+          <line x1="50" y1="300" x2="250" y2="300" stroke="var(--rule)" stroke-width="1.5"/>
+          <line x1="50" y1="322" x2="220" y2="322" stroke="var(--rule)" stroke-width="1.5"/>
+          <line x1="50" y1="344" x2="240" y2="344" stroke="var(--rule)" stroke-width="1.5"/>
+          <g class="stamp-mark">
+            <circle cx="235" cy="330" r="58" fill="none" stroke="var(--seal-green)" stroke-width="3"/>
+            <circle cx="235" cy="330" r="46" fill="none" stroke="var(--seal-green)" stroke-width="1.5"/>
+            <path d="M 210 330 L 226 346 L 262 306" fill="none" stroke="var(--seal-green)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="235" y="300" text-anchor="middle" class="stamp-text">VERIFIED</text>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
 
-  <section class="documents" id="documents">
+  <section id="documents" class="documents">
     <div class="wrap">
       <h2>Supported documents</h2>
-      <ul class="doc-list">
-        <li class="doc-item">
-          <svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="8" cy="12" r="2"/><line x1="13" y1="9.5" x2="18" y2="9.5"/><line x1="13" y1="12.5" x2="18" y2="12.5"/><line x1="13" y1="15.5" x2="16" y2="15.5"/></svg>
-          <div>
-            <p class="doc-name">Aadhaar card</p>
-            <p class="doc-desc">Name, DOB, gender, address, 12-digit UID</p>
-          </div>
+      <ul class="ledger">
+        <li class="ledger-row">
+          <span class="doc-id">01</span>
+          <span class="doc-name">Aadhaar Card</span>
+          <span class="doc-note">12‑digit UID, name, DOB, address</span>
         </li>
-        <li class="doc-item">
-          <svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="12" rx="1.5"/><line x1="7" y1="10" x2="17" y2="10"/><line x1="7" y1="13.5" x2="13" y2="13.5"/></svg>
-          <div>
-            <p class="doc-name">PAN card</p>
-            <p class="doc-desc">Name, father's name, DOB, 10-character PAN</p>
-          </div>
+        <li class="ledger-row">
+          <span class="doc-id">02</span>
+          <span class="doc-name">PAN Card</span>
+          <span class="doc-note">10‑character permanent account number</span>
         </li>
-        <li class="doc-item">
-          <svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="9" r="2.4"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="8" y1="17.5" x2="16" y2="17.5"/></svg>
-          <div>
-            <p class="doc-name">Passport</p>
-            <p class="doc-desc">MRZ lines, passport number, nationality, validity</p>
-          </div>
+        <li class="ledger-row">
+          <span class="doc-id">03</span>
+          <span class="doc-name">Passport</span>
+          <span class="doc-note">MRZ lines, passport number, expiry</span>
         </li>
-        <li class="doc-item">
-          <svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M7 9h10M7 13h6"/><circle cx="17" cy="16" r="1.6"/></svg>
-          <div>
-            <p class="doc-name">Visa</p>
-            <p class="doc-desc">Visa type, validity window, entries, sponsor</p>
-          </div>
+        <li class="ledger-row">
+          <span class="doc-id">04</span>
+          <span class="doc-name">Visa</span>
+          <span class="doc-note">visa type, validity window, sponsor</span>
         </li>
-        <li class="doc-item">
-          <svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v3h3"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="15.5" x2="15" y2="15.5"/></svg>
-          <div>
-            <p class="doc-name">Income certificate</p>
-            <p class="doc-desc">Issuing authority, income bracket, validity date</p>
-          </div>
+        <li class="ledger-row">
+          <span class="doc-id">05</span>
+          <span class="doc-name">Income Certificate</span>
+          <span class="doc-note">issuing authority, income bracket, date</span>
         </li>
       </ul>
     </div>
   </section>
 
-  <section class="how" id="how">
+  <section id="how" class="how">
     <div class="wrap">
       <h2>How it works</h2>
       <ol class="steps">
         <li class="step">
           <span class="step-num">1</span>
-          <div>
-            <p class="step-title">Upload</p>
-            <p class="step-desc">Drop in a photo or scan of the document. JPG, PNG or PDF.</p>
-          </div>
+          <h3>Upload</h3>
+          <p>Add a photo or scan of the document. JPG, PNG and PDF are accepted.</p>
         </li>
         <li class="step">
           <span class="step-num">2</span>
-          <div>
-            <p class="step-title">Extract</p>
-            <p class="step-desc">OCR reads the text and layout specific to that document type.</p>
-          </div>
+          <h3>Extract</h3>
+          <p>DSentinel reads the text on the page and pulls out the fields specific to that document type.</p>
         </li>
         <li class="step">
           <span class="step-num">3</span>
-          <div>
-            <p class="step-title">Check</p>
-            <p class="step-desc">Extracted fields are validated against expected formats and checksums.</p>
-          </div>
-        </li>
-        <li class="step">
-          <span class="step-num">4</span>
-          <div>
-            <p class="step-title">Confirm</p>
-            <p class="step-desc">You get back a structured, verified record you can trust.</p>
-          </div>
+          <h3>Verify</h3>
+          <p>Each field is checked against the document's own format rules, and anything that doesn't match is flagged.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="verify" id="verify">
-    <div class="wrap verify-row">
+  <section id="upload" class="upload">
+    <div class="wrap upload-grid">
       <div>
-        <h2>Try it</h2>
-        <p class="verify-sub">This runs a local preview only — nothing leaves your browser yet. Connect the backend to enable real extraction.</p>
-
-        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload a document">
-          <input type="file" id="fileInput" accept="image/*,.pdf" hidden>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="dropzone-icon"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
-          <p class="dropzone-text">Drag a document here, or click to browse</p>
-          <p class="dropzone-hint" id="dropzoneHint">JPG, PNG or PDF · up to 10 MB</p>
-        </div>
+        <h2>Verify a document</h2>
+        <p class="lede">Choose a document type and upload a file to see the extracted fields.</p>
       </div>
 
-      <div class="result-panel" id="resultPanel">
-        <p class="result-empty" id="resultEmpty">Extracted fields will appear here once you upload a document.</p>
-        <div class="result-content" id="resultContent" hidden>
-          <div class="result-head">
-            <span class="result-doc-type" id="resultDocType">—</span>
-            <span class="result-badge" id="resultBadge">Preview</span>
-          </div>
-          <dl class="field-list" id="fieldList"></dl>
+      <div class="upload-panel">
+        <label class="field-label" for="doc-type">Document type</label>
+        <select id="doc-type" class="select">
+          <option value="aadhaar">Aadhaar Card</option>
+          <option value="pan">PAN Card</option>
+          <option value="passport">Passport</option>
+          <option value="visa">Visa</option>
+          <option value="income">Income Certificate</option>
+        </select>
+
+        <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload a document file">
+          <p class="dropzone-title">Drop a file here or click to choose one</p>
+          <p class="dropzone-note">No file selected</p>
+          <input type="file" id="file-input" accept=".jpg,.jpeg,.png,.pdf" hidden>
+        </div>
+
+        <button id="verify-btn" class="btn btn-primary btn-full" disabled>Verify document</button>
+
+        <div id="result" class="result" hidden>
+          <p class="result-status"><span id="result-dot" class="dot"></span> <span id="result-text"></span></p>
         </div>
       </div>
     </div>
@@ -170,4 +159,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
